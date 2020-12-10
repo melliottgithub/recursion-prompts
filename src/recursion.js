@@ -6,7 +6,13 @@
 // denoted by n!, is the product of all positive integers less than or equal to n.
 // Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5); // 120
-var factorial = function(n) {
+var factorial = function (n) {
+    if (n < 0) return null;
+    if (n === 0) {
+        return 1
+    } else {
+        return n * factorial(n - 1);
+   }
 };
 
 // 2. Compute the sum of an array of integers.
@@ -233,11 +239,28 @@ var tagCount = function(tag, node) {
 };
 
 // 38. Write a function for binary search.
-// var array = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
-// binarySearch(array, 5) // 5
-// https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search
-var binarySearch = function(array, target, min, max) {
+var binarySearch = function (array, target, min, max) {
+    //array = array.sort();
+    // get the midpoint
+    let mid = Math.floor(array.length / 2);
+    //base case
+    if (array.length === 1 && array[0] !== target) {
+        return false;
+    }
+    if (target === array[mid]) {
+        return array[mid];
+    } else if (target < array[mid]) {
+        //something
+        return binarySearch(array.slice(0, mid),target)
+    } else if(target > array[mid]) {
+        //something
+        return binarySearch(array.slice(mid),target)
+    } 
+
 };
+var array = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+// console.log(binarySearch(array, 9)) // 5
+// https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search
 
 // 39. Write a merge sort function.
 // mergeSort([34,7,23,32,5,62]) // [5,7,23,32,34,62]
