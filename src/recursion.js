@@ -63,16 +63,34 @@ var sumBelow = function (n) {
         result = num - 1 + sumBelow(num - 1)
     }
     if (n < 0) {
-        result = -result;
+        return -result;
     } else {
-        result = result;
+        return result;
     }
-    return result
+   
 };
 
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
-var range = function(x, y) {
+var range = function (x, y) {
+    //  8 - 6 === 2 ===> 6,'7',8 1 element
+    let result = [];
+    let cond = x > y;
+    if (cond) {
+        temp = y;
+        y = x;
+        x = temp;//x = temp
+    }
+    if (y - x < 2) {
+        return [];
+    }
+    if (y - x === 2) {
+        return [x + 1];
+    } else {
+        result = range(x + 1, y);
+        result.unshift(x + 1);
+    }
+    return cond ? result.reverse() : result;
 };
 
 // 7. Compute the exponent of a number.
