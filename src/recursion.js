@@ -4,7 +4,7 @@
 
 // 1. Calculate the factorial of a number. The factorial of a non-negative integer n,
 // denoted by n!, is the product of all positive integers less than or equal to n.
-// Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
+// Example: 5! = 5 x 4 x 3 x 2 x 1 = 120 ///
 // factorial(5); // 120
 var factorial = function (n) {
     if (n < 0) return null;
@@ -21,7 +21,7 @@ var sum = function (array) {
     if (array.length === 0) {
         return 0;
     } else {
-        return array[0] + sum(array.slice(1)) 
+        return array[0] + sum(array.slice(1))
     }
 };
 
@@ -34,7 +34,7 @@ var arraySum = function (array) {
             sum += array[i];
         } else {
             sum += arraySum(array[i]);
-        } 
+        }
     }
     return sum;
 };
@@ -67,7 +67,7 @@ var sumBelow = function (n) {
     } else {
         return result;
     }
-   
+
 };
 
 // 6. Get the integers within a range (x, y).
@@ -323,7 +323,7 @@ var binarySearch = function (array, target, min, max) {
     } else if(target > array[mid]) {
         //something
         return binarySearch(array.slice(mid),target)
-    } 
+    }
 
 };
 var array = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
